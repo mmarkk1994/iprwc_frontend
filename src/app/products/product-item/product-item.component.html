@@ -1,0 +1,13 @@
+<figure class="card card-product">
+  <div class="img-wrap"><img [src]="product.imageUrl"></div>
+  <figcaption class="info-wrap">
+    <h4 class="title">{{product.name}}</h4>
+    <p class="description">{{product.description}}</p>
+  </figcaption>
+  <div class="bottom-wrap">
+    <div class="btn btn-sm btn-primary float-right" (click)="this.cartService.addProductToCart(product)">Add to cart</div>
+    <div class="price-wrap h5">
+      <span class="price">${{product.price}}</span>
+    </div>
+  </div>
+</figure>

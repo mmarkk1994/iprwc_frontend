@@ -1,0 +1,15 @@
+<div class="login-form">
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+    <div class="form-group">
+      <input type="text" class="form-control" name="username" placeholder="username" ngModel #username="ngModel">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" name="password" placeholder="password" ngModel #password="ngModel">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-lg btn-block">Login</button>
+    </div>
+  </form>
+</div>
+
