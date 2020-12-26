@@ -8,12 +8,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './user/login/login.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './shared/auth/token.interceptor';
-import {ResponseInterceptor} from './shared/auth/response.interceptor';
+import { TokenInterceptor } from './shared/security/token.interceptor';
+import {ResponseInterceptor} from './shared/security/response.interceptor';
 import { ProductsComponent } from './products/products.component';
 import {ProductViewComponent} from './products/product-view/product-view.component';
 import {ProductItemComponent} from './products/product-item/product-item.component';
 import { CartComponent } from './cart/cart.component';
+import { AdminComponent } from './admin/admin.component';
+import { EditProductComponent } from './admin/admin-panel/edit-product/edit-product.component';
+import { AddProductComponent } from './admin/admin-panel/add-product/add-product.component';
+import {AdminPanelComponent} from './admin/admin-panel/admin-panel.component';
 
 
 @NgModule({
@@ -25,7 +29,11 @@ import { CartComponent } from './cart/cart.component';
     ProductsComponent,
     ProductViewComponent,
     ProductItemComponent,
-    CartComponent
+    CartComponent,
+    AdminComponent,
+    EditProductComponent,
+    AddProductComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,

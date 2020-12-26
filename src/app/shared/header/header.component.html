@@ -2,11 +2,14 @@
   <p id="logo">webshop</p>
   <div class="headerRightContent">
     <p><a routerLink="">Home</a></p>
+    <p><a routerLink="/cart">Cart</a></p>
     <p *ngIf="userService.currentUser == null"><a routerLink="/login">Login</a></p>
     <p *ngIf="userService.currentUser != null"><a routerLink="" (click)="logout()">Logout</a></p>
-    <p *ngIf="userService.currentUser != null"><a routerLink="/cart">Cart</a></p>
     <p *ngIf="userService.currentUser == null"><a routerLink="/register">Register</a></p>
     <p *ngIf="currentUser">{{ currentUser.name }}</p>
+    <p *ngIf="userService.currentUser != null && userService.currentUser.privilege >= 1">
+      <a routerLink="/admin/panel">Admin</a>
+    </p>
   </div>
 </div>
 
