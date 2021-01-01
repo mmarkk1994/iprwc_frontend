@@ -1,0 +1,46 @@
+.card-product .img-wrap {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+  position: relative;
+  height: 220px;
+  text-align: center;
+}
+.card-product .img-wrap img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+.card-product .info-wrap {
+  overflow: hidden;
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+.card-product .bottom-wrap {
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+
+.card-product .price-old {
+  color: #999;
+}
+
+figure {
+  width: 350px;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+button {
+  margin-left: 127px;
+}
+
+.card-product {
+  margin: auto;
+}
+
+h6 {
+  margin-left: 3px;
+}
+

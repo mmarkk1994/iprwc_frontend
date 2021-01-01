@@ -33,4 +33,8 @@ export class ProductService {
     return this.api.postRequest('product/add', params);
   }
 
+  deleteProduct(id: number) {
+    return this.api.deleteRequest(`product/delete/${id}`);
+  }
+
 }

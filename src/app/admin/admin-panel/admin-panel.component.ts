@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {ProductService} from '../../products/product.service';
 import {Product} from '../../products/product.model';
 import {Subscription} from 'rxjs';
@@ -26,6 +26,17 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
     this.productSubscription = this.productService.getProducts()
       .subscribe(products => {
         this.products = products;
+      });
+  }
+
+  deleteProduct(product: Product) {
+    this.productService.deleteProduct(product.id)
+      .subscribe((response) => {
+        console.log(response.message);
+        this.products = [];
+        this.fetchAllProducts();
+      }, errors => {
+        console.log(errors);
       });
   }
 

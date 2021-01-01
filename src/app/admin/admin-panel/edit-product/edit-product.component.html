@@ -1,1 +1,24 @@
-<p>edit-product works!</p>
+<div class="container">
+  <figure class="card card-product">
+    <form #form="ngForm">
+      <div class="img-wrap"><img [src]="" alt="picture of album"></div>
+      <div class="info-wrap">
+        <div class="form-group">
+          <h6 class="title">Title</h6>
+          <input type="text" class="form-control" name="album" ngModel #album="ngModel">
+        </div>
+        <div class="form-group">
+          <h6 class="description">Description</h6>
+          <input type="text" class="form-control" name="description" ngModel #description="ngModel">
+        </div>
+        <div class="form-group">
+          <h6 class="price">Price</h6>
+          <input type="text" class="form-control" name="price" ngModel #price="ngModel">
+        </div>
+      </div>
+      <div class="bottom-wrap">
+        <button class="btn btn-primary" (click)="editProduct()">Edit</button>
+      </div>
+    </form>
+  </figure>
+</div>
