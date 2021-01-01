@@ -33,8 +33,27 @@ export class ProductService {
     return this.api.postRequest('product/add', params);
   }
 
+  getProduct(id: number) {
+    const productSubject = new Subject<Product>();
+    this.api.getRequest('product/' + id + '/')
+      .subscribe(response => {
+        const product = response.content as Product;
+        productSubject.next(product);
+        productSubject.complete();
+      });
+    return productSubject;
+  }
+
   deleteProduct(id: number) {
     return this.api.deleteRequest(`product/delete/${id}`);
+  }
+
+  editProduct(product: Product) {
+    const params = new HttpParams()
+      .set('album', product.album)
+      .set('description', product.description)
+      .set('price', product.price.toString());
+    return this.api.putRequest(`product/edit/${product.id}`, params);
   }
 
 }

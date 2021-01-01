@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'admin', component: AdminComponent, canActivateChild: [AdminGuardService], children: [
       {path: 'panel', component: AdminPanelComponent},
-      {path: 'product/edit', component: EditProductComponent},
+      {path: 'product/:id/edit', component: EditProductComponent},
       {path: 'product/add', component: AddProductComponent}
     ]},
   {path: '', component: ProductViewComponent}

@@ -21,7 +21,7 @@
       <td>{{product.album}}</td>
       <td>{{product.description}}</td>
       <td>€{{product.price}}</td>
-      <td><a routerLink="/admin/product/edit">Edit</a></td>
+      <td><a routerLink="/admin/product/{{product.id}}/edit">Edit</a></td>
       <td><a routerLink="/admin/panel" (click)="deleteProduct(product)">Delete</a></td>
     </tr>
     </tbody>

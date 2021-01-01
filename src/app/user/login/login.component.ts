@@ -22,13 +22,13 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.form.value.username, this.form.value.password)
       .subscribe((response) => {
         const user = response.content as User;
-
+        console.log(response.message);
         localStorage.setItem('user', JSON.stringify(user));
         this.userService.currentUser = user;
         this.route.navigate(['/']);
 
-      }, error => {
-        console.log(error.error.message);
+      }, errors => {
+        console.log(errors);
       });
   }
 }

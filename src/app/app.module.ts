@@ -42,7 +42,7 @@ import {AdminPanelComponent} from './admin/admin-panel/admin-panel.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}, CartComponent,
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}, CartComponent, EditProductComponent,
     {provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })

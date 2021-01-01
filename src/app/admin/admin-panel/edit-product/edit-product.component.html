@@ -5,15 +5,15 @@
       <div class="info-wrap">
         <div class="form-group">
           <h6 class="title">Title</h6>
-          <input type="text" class="form-control" name="album" ngModel #album="ngModel">
+          <input type="text" class="form-control" name="album" [(ngModel)]="product.album">
         </div>
         <div class="form-group">
           <h6 class="description">Description</h6>
-          <input type="text" class="form-control" name="description" ngModel #description="ngModel">
+          <input type="text" class="form-control" name="description" [(ngModel)]="product.description">
         </div>
         <div class="form-group">
           <h6 class="price">Price</h6>
-          <input type="text" class="form-control" name="price" ngModel #price="ngModel">
+          <input type="text" class="form-control" name="price" [(ngModel)]="product.price">
         </div>
       </div>
       <div class="bottom-wrap">
