@@ -4,6 +4,8 @@ import {Product} from '../../products/product.model';
 import {Subscription} from 'rxjs';
 import {EditProductComponent} from './edit-product/edit-product.component';
 import {Router} from '@angular/router';
+import {OrderService} from '../../order/order.service';
+import {OrderItems} from '../../order/order-items.model';
 
 @Component({
   selector: 'app-products',
@@ -12,12 +14,21 @@ import {Router} from '@angular/router';
 })
 export class AdminPanelComponent implements OnInit, OnDestroy {
   products: Product[] = [];
+  orders: OrderItems[];
   productSubscription: Subscription;
 
-  constructor(private productService: ProductService, private editProductComponent: EditProductComponent, private route: Router) { }
+  constructor(private productService: ProductService, private orderService: OrderService,
+              private editProductComponent: EditProductComponent, private route: Router) { }
 
   ngOnInit() {
     this.fetchAllProducts();
+
+    this.orderService.getAllOrders()
+      .subscribe((orders) => {
+        this.orders = orders.content;
+      }, errors => {
+        console.log(errors.error.message);
+      });
   }
 
   ngOnDestroy(): void {

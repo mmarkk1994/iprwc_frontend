@@ -18,6 +18,7 @@ import { AdminComponent } from './admin/admin.component';
 import { EditProductComponent } from './admin/admin-panel/edit-product/edit-product.component';
 import { AddProductComponent } from './admin/admin-panel/add-product/add-product.component';
 import {AdminPanelComponent} from './admin/admin-panel/admin-panel.component';
+import { OrderComponent } from './order/order.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {AdminPanelComponent} from './admin/admin-panel/admin-panel.component';
     AdminComponent,
     EditProductComponent,
     AddProductComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

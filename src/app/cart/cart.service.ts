@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
 })
   export class CartService {
   products: Product[] = [];
+  product: Product;
 
   constructor(private route: Router) {
 
@@ -23,6 +24,12 @@ import {Router} from '@angular/router';
   }
 
   removeProductFromCart(product: Product) {
-    this.products = this.products.filter(({ id }) => id !== id);
+    this.products = this.products.filter(({id}) => id !== product.id);
+    console.log(this.products);
+  }
+
+  clearCart() {
+    this.products = [];
+    localStorage.removeItem('cart');
   }
 }
