@@ -14,9 +14,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(private userService: UserService, private route: Router) { }
 
-  ngOnInit() {
-    const currentUser = localStorage.getItem('user');
-  }
+  ngOnInit() {}
 
   onSubmit() {
     if (this.form.valid) {
@@ -25,13 +23,14 @@ export class RegisterComponent implements OnInit {
   }
 
   private register() {
-    this.userService.register(this.form.value.username, this.form.value.email, this.form.value.password)
+    this.userService.register(this.form.value.username, this.form.value.email, this.form.value.password,
+      this.form.value.streetAddress, this.form.value.postalCode, this.form.value.province)
       .subscribe((response) => {
         const user = response.content as User;
         console.log(response.message);
         localStorage.setItem('user', JSON.stringify(user));
         this.userService.currentUser = user;
-        this.route.navigate(['/']);
+        this.route.navigate(['/login']);
       }, errors => {
         console.log(errors);
       });

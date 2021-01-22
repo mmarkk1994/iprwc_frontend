@@ -11,7 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class EditProductComponent implements OnInit {
   @ViewChild('form', {static: true}) form: NgForm;
-  product: Product = new Product();
+  product: Product;
 
   constructor(private productService: ProductService, private route: Router, private activeRoute: ActivatedRoute) { }
 

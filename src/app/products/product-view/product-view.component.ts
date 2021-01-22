@@ -29,4 +29,5 @@ export class ProductViewComponent implements OnInit, OnDestroy {
       });
   }
 
+
 }

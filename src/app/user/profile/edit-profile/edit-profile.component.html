@@ -1,0 +1,27 @@
+<div class="container">
+  <figure class="card card-product">
+    <form #form="ngForm">
+      <div class="info-wrap">
+        <div class="form-group">
+          <h6 class="email">Email</h6>
+          <input type="email" class="form-control" placeholder="{{user.email}}" name="email" [(ngModel)]="user.email">
+        </div>
+        <div class="form-group">
+          <h6 class="streetAddress">Street address</h6>
+          <input type="text" class="form-control" placeholder="{{user.streetAddress}}" name="streetAddress" [(ngModel)]="user.streetAddress">
+        </div>
+        <div class="form-group">
+          <h6 class="postalCode">Postal code</h6>
+          <input type="text" class="form-control" placeholder="{{user.postalCode}}" name="postalCode" [(ngModel)]="user.postalCode">
+        </div>
+        <div class="form-group">
+          <h6 class="province">Province</h6>
+          <input type="text" class="form-control" placeholder="{{user.province}}" name="province" [(ngModel)]="user.province">
+        </div>
+      </div>
+      <div class="bottom-wrap">
+        <button class="btn btn-primary" (click)="editProfile()">Edit</button>
+      </div>
+    </form>
+  </figure>
+</div>

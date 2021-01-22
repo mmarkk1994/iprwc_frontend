@@ -24,6 +24,7 @@
       <table class="table">
         <thead>
         <tr>
+          <th>Album ID</th>
           <th>Album</th>
           <th>Description</th>
           <th>Price</th>
@@ -36,15 +37,18 @@
           <td></td>
           <td></td>
           <td></td>
-          <td><a routerLink="/admin/product/add">Add</a></td>
           <td></td>
+          <td><a routerLink="/admin/product/add">Add</a></td>
         </tr>
         <tr *ngFor="let product of this.products">
+          <td>{{product.id}}</td>
           <td>{{product.album}}</td>
           <td>{{product.description}}</td>
           <td>€{{product.price}}</td>
-          <td><a routerLink="/admin/product/{{product.id}}/edit">Edit</a></td>
-          <td><a routerLink="/admin/panel" (click)="deleteProduct(product)">Delete</a></td>
+          <td>
+            <a routerLink="/admin/product/{{product.id}}/edit">Edit</a><br />
+            <a routerLink="/admin/panel" (click)="deleteProduct(product)">Delete</a>
+          </td>
         </tr>
         </tbody>
       </table>

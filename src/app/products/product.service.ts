@@ -28,7 +28,7 @@ export class ProductService {
     const params = new HttpParams()
       .set('album', product.album)
       .set('description', product.description)
-      .set('image', product.imageUrl)
+      .set('image', product.image)
       .set('price', product.price.toString());
     return this.api.postRequest('product/add', params);
   }

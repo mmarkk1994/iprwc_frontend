@@ -9,9 +9,12 @@ import {EditProductComponent} from './admin/admin-panel/edit-product/edit-produc
 import {AddProductComponent} from './admin/admin-panel/add-product/add-product.component';
 import {AdminGuardService} from './shared/security/guards/admin-guard.service';
 import {AdminPanelComponent} from './admin/admin-panel/admin-panel.component';
+import {ProfileComponent} from './user/profile/profile.component';
+import {EditProfileComponent} from './user/profile/edit-profile/edit-profile.component';
 
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
+  {path: 'profile', component: ProfileComponent},
   {path: 'login', component: LoginComponent},
   {path: 'cart', component: CartComponent},
   {path: 'admin', component: AdminComponent, canActivateChild: [AdminGuardService], children: [
@@ -19,7 +22,9 @@ const routes: Routes = [
       {path: 'product/:id/edit', component: EditProductComponent},
       {path: 'product/add', component: AddProductComponent}
     ]},
-  {path: '', component: ProductViewComponent}
+  {path: '', component: ProductViewComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'profile/edit', component: EditProfileComponent}
 ];
 
 @NgModule({

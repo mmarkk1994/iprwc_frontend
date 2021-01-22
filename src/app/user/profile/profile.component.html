@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div id="userInformation" class="col">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Street address</th>
+          <th>Postal code</th>
+          <th>Province</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{currentUser.name}}</td>
+          <td>{{currentUser.email}}</td>
+          <td>{{currentUser.streetAddress}}</td>
+          <td>{{currentUser.postalCode}}</td>
+          <td>{{currentUser.province}}</td>
+          <td><a routerLink="/profile/edit">Edit</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Album</th>
+          <th>Order date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{order.id}}</td>
+          <td>{{order.album}}</td>
+          <td>{{order.orderDate | date:'dd-mm-yyyy HH:mm'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

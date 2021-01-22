@@ -14,9 +14,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private userService: UserService, private route: Router) { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   onSubmit() {
     this.userService.login(this.form.value.username, this.form.value.password)
@@ -26,7 +24,6 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('user', JSON.stringify(user));
         this.userService.currentUser = user;
         this.route.navigate(['/']);
-
       }, errors => {
         console.log(errors);
       });

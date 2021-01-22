@@ -23,10 +23,28 @@
       </div>
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" name="confirm_password" placeholder="confirm password" ngModel required minlength="6" #password="ngModel">
+      <input type="password" class="form-control" name="confirmPassword" placeholder="confirm password" ngModel required minlength="6" #password="ngModel">
       <div *ngIf="!password.valid && password.touched">
         <span class="helper-text" *ngIf="password.errors.required">Confirm your password!</span>
         <span class="helper-text" *ngIf="password.errors.minlength">Password has to have at least 6 digits</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="streetAddress" placeholder="street address" ngModel #streetAddress="ngModel">
+      <div *ngIf="!streetAddress.valid && streetAddress.touched">
+        <span class="helper-text" *ngIf="streetAddress.errors.required">Street address required!</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="postalCode" placeholder="postal code" ngModel #postalCode="ngModel">
+      <div *ngIf="!postalCode.valid && postalCode.touched">
+        <span class="helper-text" *ngIf="postalCode.errors.required">Postal code required!</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="province" placeholder="province" ngModel #province="ngModel">
+      <div *ngIf="!province.valid && province.touched">
+        <span class="helper-text" *ngIf="province.errors.required">Province required!</span>
       </div>
     </div>
     <div class="form-group">

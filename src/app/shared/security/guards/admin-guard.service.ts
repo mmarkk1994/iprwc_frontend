@@ -22,7 +22,7 @@ export class AdminGuardService implements CanActivate, CanActivateChild {
     Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const user = JSON.parse(localStorage.getItem('user')) as User;
 
-    if (user != null && user.privilege >= 1) {
+    if (user != null && user.privilege === 1) {
       this.userService.currentUser = user;
       return true;
     }

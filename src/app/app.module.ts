@@ -19,7 +19,8 @@ import { EditProductComponent } from './admin/admin-panel/edit-product/edit-prod
 import { AddProductComponent } from './admin/admin-panel/add-product/add-product.component';
 import {AdminPanelComponent} from './admin/admin-panel/admin-panel.component';
 import { OrderComponent } from './order/order.component';
-
+import { ProfileComponent } from './user/profile/profile.component';
+import { EditProfileComponent } from './user/profile/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { OrderComponent } from './order/order.component';
     EditProductComponent,
     AddProductComponent,
     AdminPanelComponent,
-    OrderComponent
+    OrderComponent,
+    ProfileComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,

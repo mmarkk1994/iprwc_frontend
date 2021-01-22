@@ -18,12 +18,24 @@ export class UserService {
     return this.api.postRequest('users/login', params);
   }
 
-  register(username: string, email: string, password: string) {
+  register(username: string, email: string, password: string, streetAddress: string, postalCode: string, province: string) {
     const params = new HttpParams()
       .set('username', username)
       .set('email', email)
-      .set('password', password);
+      .set('password', password)
+      .set('streetAddress', streetAddress)
+      .set('postalCode', postalCode)
+      .set('province', province);
     return this.api.postRequest('users/register', params);
+  }
+
+  editUser(email: string, streetAddress: string, postalCode: string, province: string) {
+    const params = new HttpParams()
+      .set('email', email)
+      .set('streetAddress', streetAddress)
+      .set('postalCode', postalCode)
+      .set('province', province);
+    return this.api.putRequest(`users/profile/${this.currentUser.id}/edit`, params);
   }
 
   setNewAuthToken(authToken: string) {
