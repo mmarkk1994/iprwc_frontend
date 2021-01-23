@@ -12,7 +12,7 @@ import {OrderService} from '../order/order.service';
 export class CartComponent implements OnInit {
 
 
-  constructor(private cartService: CartService, private orderService: OrderService) {
+  constructor(public cartService: CartService, private orderService: OrderService) {
     if (localStorage.getItem('cart') != null) {
       this.cartService.products = JSON.parse(localStorage.getItem('cart'));
     } else {
