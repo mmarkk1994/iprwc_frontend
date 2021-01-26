@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../product.model';
 import {CartService} from '../../cart/cart.service';
-import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product-item',
@@ -11,9 +10,9 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
 
-  constructor(public cartService: CartService, private sanitizer: DomSanitizer) {}
+  constructor(public cartService: CartService) {}
 
   ngOnInit() {
-
+    console.log(this.product.image);
   }
 }
