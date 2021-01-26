@@ -5,7 +5,7 @@
       <tr *ngFor="let product of this.cartService.products">
         <td>
           <figure class="media">
-            <div class="img-wrap"><img src="http://bootstrap-ecommerce.com/main/images/items/1.jpg" class="img-thumbnail img-sm"></div>
+            <div class="img-wrap"><img [src]="product.image" class="img-thumbnail img-sm"></div>
             <figcaption class="media-body">
               <h6 class="title text-truncate">{{product.album}}</h6>
               <dl class="param param-inline small">
