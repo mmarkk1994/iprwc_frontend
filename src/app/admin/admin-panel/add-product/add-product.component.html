@@ -1,7 +1,6 @@
 <div class="container">
   <figure class="card card-product">
     <form #form="ngForm" (ngSubmit)="onSubmit()">
-      <div class="img-wrap"><img [src]="" alt="picture of album"></div>
       <div class="info-wrap">
         <div class="form-group">
           <h6 class="title">Title</h6>
@@ -14,6 +13,10 @@
         <div class="form-group">
           <h6 class="price">Price</h6>
           <input type="text" class="form-control" name="price" [(ngModel)]="product.price" ngModel #price="ngModel">
+        </div>
+        <div class="form-group">
+          <h6 class="image">Image link</h6>
+          <input type="text" class="form-control" name="image" [(ngModel)]="product.image" ngModel #image="ngModel">
         </div>
       </div>
       <div class="bottom-wrap">
