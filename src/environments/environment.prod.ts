@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://iprwc-backend.herokuapp.com/'
+  apiUrl: 'https://cors-anywhere.herokuapp.com/https://iprwc-backend.herokuapp.com/'
 };
 
 
