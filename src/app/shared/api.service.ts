@@ -17,19 +17,19 @@ export class ApiService {
     return this.http.post<any>(this.baseUrl + url, data);
   }
 
-  putRequest(url: string, data: HttpParams) {
-    return this.http.put<any>(this.baseUrl + url, data);
-  }
-
-  postMultipartRequest(url: string, data: FormData) {
-    return this.http.post<any>(this.baseUrl + url, data);
-  }
-
   getRequest(url: string) {
     return this.http.get<any>(this.baseUrl + url);
   }
 
   deleteRequest(url: string) {
     return this.http.delete<any>(this.baseUrl + url);
+  }
+
+  putRequest(url: string, data: HttpParams) {
+    return this.http.put<any>(this.baseUrl + url, data);
+  }
+
+  postMultipartRequest(url: string, data: FormData) {
+    return this.http.post<any>(this.baseUrl + url, data);
   }
 }
