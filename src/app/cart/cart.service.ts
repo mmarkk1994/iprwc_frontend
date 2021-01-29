@@ -17,6 +17,7 @@ import {Router} from '@angular/router';
     if (localStorage.getItem('user') == null) {
       this.route.navigate(['/login']);
     } else {
+      product.quantity = 1;
       this.products.push(product);
       localStorage.setItem('cart', JSON.stringify(this.products));
       this.route.navigate(['/cart']);
