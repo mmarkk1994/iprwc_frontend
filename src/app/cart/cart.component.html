@@ -18,7 +18,7 @@
         <td>
           <div class="quantity-wrap">
             <button (click)="lowerProductQuantity(product)">-</button>
-            <p>{{ product.quantity | number }}</p>
+            {{ product.quantity }}
             <button (click)="upProductQuantity(product)">+</button>
           </div>
         </td>
