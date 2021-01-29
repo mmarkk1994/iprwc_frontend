@@ -1,7 +1,10 @@
 <div class="container">
   <figure class="card card-product">
     <form #form="ngForm">
-      <div class="img-wrap"><img [src]="" alt="picture of album"></div>
+      <div class="form-group">
+        <h6 class="image">Image URL</h6>
+        <input type="url" class="form-control" name="image" [(ngModel)]="product.image">
+      </div>
       <div class="info-wrap">
         <div class="form-group">
           <h6 class="title">Title</h6>
