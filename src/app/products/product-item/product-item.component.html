@@ -1,5 +1,5 @@
 <figure class="card card-product">
-  <div class="img-wrap" [ngStyle]="{'background-image': 'url(' + product.image + ')', 'background-size': 'contain', 'background-repeat': 'no-repeat', 'width': '346px'}"></div>
+  <div class="img-wrap"><img [src]="product.image" alt="album"></div>
   <figcaption class="info-wrap">
     <h4 class="title">{{product.album}}</h4>
     <p class="description">{{product.description}}</p>
