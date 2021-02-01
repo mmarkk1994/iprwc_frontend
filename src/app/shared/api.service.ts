@@ -7,6 +7,7 @@ import {environment} from '../../environments/environment';
 })
 export class ApiService {
   baseUrl = environment.apiUrl;
+
   constructor(private http: HttpClient) {}
 
   postRequest(url: string, data: HttpParams) {
@@ -27,9 +28,5 @@ export class ApiService {
 
   putRequest(url: string, data: HttpParams) {
     return this.http.put<any>(this.baseUrl + url, data);
-  }
-
-  postMultipartRequest(url: string, data: FormData) {
-    return this.http.post<any>(this.baseUrl + url, data);
   }
 }

@@ -28,16 +28,12 @@ export class TokenInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err) => {
         if (err.status === 401) {
-          this.jwtExpired();
+          localStorage.removeItem('user');
+          this.userService.currentUser = null;
+          this.router.navigate(['/login']);
         }
         throw err;
       })
     );
-  }
-
-  private jwtExpired() {
-    localStorage.removeItem('user');
-    this.userService.currentUser = null;
-    this.router.navigate(['/login']);
   }
 }

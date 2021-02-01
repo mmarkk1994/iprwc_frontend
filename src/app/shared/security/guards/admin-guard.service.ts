@@ -20,6 +20,7 @@ export class AdminGuardService implements CanActivate, CanActivateChild {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):
     Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+
     const user = JSON.parse(localStorage.getItem('user')) as User;
 
     if (user != null && user.privilege === 1) {

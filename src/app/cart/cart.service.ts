@@ -9,9 +9,7 @@ import {Router} from '@angular/router';
   products: Product[] = [];
   product: Product;
 
-  constructor(private route: Router) {
-
-  }
+  constructor(private route: Router) {}
 
   addProductToCart(product: Product) {
     if (localStorage.getItem('user') == null) {
