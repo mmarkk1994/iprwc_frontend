@@ -11,6 +11,7 @@
     "heroku-postbuild": "ng build --prod"
   },
   "private": true,
+  "proxy": "https://cors-anywhere.herokuapp.com/",
   "dependencies": {
     "@angular/animations": "~11.1.0",
     "@angular/common": "~11.1.0",
